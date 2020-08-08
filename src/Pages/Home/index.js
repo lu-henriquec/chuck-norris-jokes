@@ -10,7 +10,6 @@ function Home() {
         <h1>Home</h1>
       </div>
       <Link to='/categories'>Categories</Link>
-      <Link to='/joke'>Joke</Link>
     </>
   );
 }

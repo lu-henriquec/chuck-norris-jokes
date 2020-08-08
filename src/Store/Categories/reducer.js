@@ -4,12 +4,12 @@ const INITIAL_STATE = {
 	categories: []
 };
 
-export default function categorieReducer(state = INITIAL_STATE, { type, data }) {
+export default function categorieReducer(state = INITIAL_STATE, { type, payload }) {
 	switch (type) {
-	case TYPES_ACTION.SET_CATEGORIES_SUCCESS:
+	case TYPES_ACTION.SET_CATEGORIES:
 		return {
 			...state,
-			categories: data.payload
+			categories: payload
 		}
 	default:
 		return state;
