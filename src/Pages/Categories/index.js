@@ -1,8 +1,9 @@
 import React from 'react';
 import { useSelector} from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import Header from '../../Components/Header';
+import Button from '../../Components/Button';
+
 import { Main, Content } from './style';
 
 function Categories() {
@@ -13,12 +14,13 @@ function Categories() {
       <Header link="/" />
       
       <Main>
-        <h1>Categorias:</h1>
+        <h1>Categorias</h1>
+        <p>Selecione uma categoria para ver uma piada</p>
 
         <ul>
           {categories.map( (cat, idx) => (
             <li key={idx}>
-              <Link to={`/joke/${cat}`}>{cat}</Link>
+              <Button link={`/joke/${cat}`} label={cat} />
             </li>
           ))}
         </ul>

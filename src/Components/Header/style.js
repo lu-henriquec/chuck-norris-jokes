@@ -6,6 +6,7 @@ export const Content = styled.div`
   justify-content: space-between;
 
   padding: .8rem;
+  background-color: #F8F8FC;
 
   & > img {
     height: 7rem;

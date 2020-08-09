@@ -4,12 +4,9 @@ export default createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600,700');
 
   :root {
-    --color-background: #F0F0F7;
-    --color-primary: #c00611;
-    --color-secondary: #ff5003;
-    --color-title-in-primary: #FFFFFF;
-    --color-text-complement: #9C98A6;
-    --color-text-base: #222;
+    --color-primary: #F29F05;
+    --color-title: #FFFFFF;
+    --color-text-base: #000;
 
     font-size: 60%;
   }
@@ -25,7 +22,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background-color: var(--color-background);
+    background-color: var(--color-primary);
     font: 16px/1.5 "Courier New", Arial, sans-serif;
   }
 

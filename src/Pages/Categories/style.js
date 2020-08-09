@@ -6,22 +6,41 @@ export const Content = styled.div`
 `;
 
 export const Main = styled.main`
-  padding: 2.5rem;
+  padding: 1.5rem;
 
   h1 {
     font-weight: 500;
-    font-size: 3rem;
+    font-size: 4.2rem;
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
   }
 
   ul {
     list-style: none;
 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+
     li {
-      padding: .4rem 0;
+      margin: 1.2rem;
     }
   }
 
-  a {
-    color: initial;
+  @media (min-width: 700px) {
+    margin: 0 auto;
+
+    ul {
+      margin-top: 5rem;
+
+      li {
+        margin: 3rem;
+      }
+    }
   }
 `;

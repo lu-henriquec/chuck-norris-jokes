@@ -38,7 +38,7 @@ function Joke() {
     <Content>
       <Header link='/categories'/>
       <Main>
-        <h1>Categoria: {category}</h1>
+        <h1>{category}</h1>
 
         {loading 
           ? <h2>Carregando piada...</h2>

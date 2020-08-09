@@ -7,12 +7,27 @@ export const Main = styled.div`
 
   h1 {
     font-size: 2.0rem;
-    font-weight: 500;
     padding: 1rem 0;
   }
 
   a {
-    color: var(--color-secondary);
+    color: #FFF;
+    background: #000;
+    color: #FFF;
+    padding: .4rem 0;
+    transition: background .2s;
+    font-size: 2rem;
+    text-decoration: none;
+    padding: 1rem;
+
+    &:hover {
+      background: rgba(0, 0, 0, .6);
+    }
+  }
+
+  p {
+    margin-bottom: 2rem;
+    font-weight: bold;
   }
 `;
 
