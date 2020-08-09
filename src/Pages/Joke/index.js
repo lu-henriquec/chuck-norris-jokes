@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
 
 import { getJoke } from '../../Services/categorieService';
+import Header from '../../Components/Header';
 
-import backIcon from '../../Assets/Images/back.svg';
+import { Content, Main } from './style';
 
 // import { Container } from './styles';
 
@@ -35,20 +35,20 @@ function Joke() {
   }
 
   return (
-    <>
-      <Link to="/categories" className="">
-          <img src={backIcon} alt="Voltar"/>
-      </Link>
-      <h1>Joke: {category}</h1>
+    <Content>
+      <Header link='/categories'/>
+      <Main>
+        <h1>Categoria: {category}</h1>
 
-      {loading 
-        ? <h2>Carregando piada...</h2>
-        : <>
-          <p>{joke}</p>
-          <button type="button" onClick={handleGetJoke}>Ver outra piada</button>
-        </>
-      }
-    </>
+        {loading 
+          ? <h2>Carregando piada...</h2>
+          : <>
+            <p>{joke}</p>
+            <button type="button" onClick={handleGetJoke}>Ver outra piada</button>
+          </>
+        }
+      </Main>
+    </Content>
   );
 }
 

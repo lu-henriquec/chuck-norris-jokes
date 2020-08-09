@@ -1,16 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// import { Container } from './styles';
+import logo from '../../Assets/Images/chuck-norris-logo.png';
+
+import { Main, Img  } from './style';
 
 function Home() {
   return (
-    <>
-      <div>
-        <h1>Home</h1>
-      </div>
-      <Link to='/categories'>Categories</Link>
-    </>
+    <Main>
+      <Img src={logo} alt="Chuck Norris" />
+      <h1>Chuck Norris Jokes</h1>
+      <Link to='/categories'>Divirta-se</Link>
+    </Main>
   );
 }
 

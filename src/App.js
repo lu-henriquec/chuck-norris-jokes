@@ -5,12 +5,13 @@ import { BrowserRouter } from 'react-router-dom';
 import store from './Store';
 
 import Routes from './Routes';
-// import GlobalStyles from './styles/global';
+import GlobalStyles from './Styles/global';
 
 function App() {
 	return(
 		<Provider store={store}>
 			<BrowserRouter>
+				<GlobalStyles />
 				<Routes />
 			</BrowserRouter>
 		</Provider>
