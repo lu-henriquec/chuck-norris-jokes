@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useEffect} from 'react';
+import React, { Suspense, lazy, useEffect, useCallback} from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { useDispatch, useSelector} from 'react-redux';
 
@@ -13,20 +13,21 @@ const NotFound = lazy(() => import('../Pages/NotFound'));
 export default function Routes() {
   const { categories } = useSelector(state => state.categorieReducer);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    if(!categories.length) {
-      getCategoriesList();
-    }
-  }, []);
-
-  async function getCategoriesList() {
+  
+  const getCategoriesList = useCallback(async () => {
     const categoriesList = await getCategories();
 
     if(categoriesList) {
       dispatch(setCategories(categoriesList.data))
     }
-  }
+  }, [dispatch]);
+
+  useEffect(() => {
+    if(!categories.length) {
+      getCategoriesList();
+    }
+  }, [categories, getCategoriesList]);
+
 
   return (
     <Suspense fallback={<div>Carregando...</div>}>

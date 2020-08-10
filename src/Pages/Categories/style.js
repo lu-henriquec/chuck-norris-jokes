@@ -7,6 +7,7 @@ export const Content = styled.div`
 
 export const Main = styled.main`
   padding: 1.5rem;
+  max-width: 1100px;
 
   h1 {
     font-weight: 500;

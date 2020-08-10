@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router';
 
 import { getJoke } from '../../Services/categorieService';
@@ -13,26 +13,32 @@ function Joke() {
   const [joke, setJoke] = useState('');
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    handleGetJoke();
-  }, []);
-
-  async function handleGetJoke() {
+  const handleGetJoke = useCallback( async () => {
+    console.log('handleGetJoke')
     setLoading(true);
     const response = await getJoke(category);
 
     if(response) {
-      const newJoke = response.data.value;
-
-      if(newJoke === joke) {
-        handleGetJoke();
-        return;
-      }
-
       setJoke(response.data.value);
       setLoading(false);
     }
-  }
+  }, [category]);
+  
+  useEffect(() => {
+    handleGetJoke();
+  }, [handleGetJoke]);
+
+
+  // async function handleGetJoke() {
+  //   console.log('handleGetJoke')
+  //   setLoading(true);
+  //   const response = await getJoke(category);
+
+  //   if(response) {
+  //     setJoke(response.data.value);
+  //     setLoading(false);
+  //   }
+  // }
 
   return (
     <Content>
