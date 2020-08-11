@@ -2,7 +2,7 @@
 
 Esse projeto foi feito baseado na API do [ChuckNorris.io](https://api.chucknorris.io/)
 
-Você pode acessar o [projeto aqui]().
+Você pode acessar o [projeto aqui](https://lu-henriquec.github.io/chuck-norris-jokes/#/).
 
 ## Stack
 
