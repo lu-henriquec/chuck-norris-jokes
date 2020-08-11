@@ -1,9 +1,8 @@
-<div style="text-align:center">
+<p align="center">
   <img src="https://lu-henriquec.github.io/chuck-norris-jokes/static/media/chuck-norris-logo.b79a973c.png" />
-  <h1>Chuck Norris Jokes 👨🏻‍🦰💬</h1>
-</div>
+</p>
+<h1 align="center">Chuck Norris Jokes 👨🏻‍🦰💬</h1>
 <br /><br/>
-
 
 Esse projeto foi feito baseado na API do [ChuckNorris.io](https://api.chucknorris.io/)
 
