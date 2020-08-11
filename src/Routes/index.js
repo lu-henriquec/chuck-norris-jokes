@@ -1,5 +1,6 @@
 import React, { Suspense, lazy, useEffect, useCallback} from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { createBrowserHistory } from 'history'
+import { HashRouter, Switch, Route } from 'react-router-dom'
 import { useDispatch, useSelector} from 'react-redux';
 
 import { getCategories } from '../Services/categorieService';
@@ -30,13 +31,15 @@ export default function Routes() {
 
 
   return (
-    <Suspense fallback={<div>Carregando...</div>}>
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/categories" exact component={Categories} />
-        <Route path="/joke/:category" exact component={Joke} />
-			  <Route component={NotFound} />
-      </Switch>
-    </Suspense>
+    <HashRouter history={createBrowserHistory()}>
+      <Suspense fallback={<div>Carregando...</div>}>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/categories" exact component={Categories} />
+          <Route path="/joke/:category" exact component={Joke} />
+          <Route component={NotFound} />
+        </Switch>
+      </Suspense>
+    </HashRouter>
   );
 };
